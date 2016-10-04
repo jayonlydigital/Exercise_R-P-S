@@ -1,49 +1,57 @@
 
-var humanScore = 0;
-var computerScore = 0;
-
-document.getElementById('rock').onclick = playRock;
-document.getElementById('paper').onclick = playPaper;
-document.getElementById('scissors').onclick = playScissors;
+$(function(){
 
 
+  var humanScore = 0;
+  var computerScore = 0;
 
-function playRock() {
-  play("rock");
-}
-function playPaper() {
-  play("paper");
-}
-function playScissors() {
-  play("scissors");
-}
+  var computerOptions = ['rock', 'paper', 'scissors'];
 
 
+  $('#rock').click(function(){
+    play("rock");
+  });
 
-function play(humanPlay) {
-  
+  $('#paper').click(function(){
+    play("paper");
+  });
 
-  
+  $('#scissors').click(function(){
+    play("scissors");
+  });
 
-  if(humanPlay == 'rock') {
-  	document.getElementById('humanImage').src = "images/rock.png";
 
-  } else if (humanPlay == 'paper') {
-  	document.getElementById('humanImage').src = "images/paper.png";
 
-  } else if (humanPlay == 'scissors') {
-  	document.getElementById('humanImage').src = "images/scissors.png";
- 
+
+
+  function play(humanPlay) {
+
+    computerPlay = getComputerPlay();
+    
+    if(humanPlay == 'rock') {
+    	$('#humanImage').attr('src', 'images/rock.png');
+
+    } else if (humanPlay == 'paper') {
+    	$('#humanImage').attr('src', 'images/paper.png');
+
+    } else if (humanPlay == 'scissors') {
+    	$('#humanImage').attr('src', 'images/scissors.png');
+   
+    }
+    
+    $('#humanScore').html(humanScore);
+    $('#computerScore').html(computerScore);
   }
-  
-  document.getElementById('humanScore').innerHTML = humanScore;
-  document.getElementById('computerScore').innerHTML = computerScore;
-  
-
-
-}
+    
 
 
 
+  function getComputerPlay() {
 
+  }
+
+
+
+
+});
 
